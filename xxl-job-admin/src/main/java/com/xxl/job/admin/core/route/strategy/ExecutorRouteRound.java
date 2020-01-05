@@ -10,6 +10,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
 /**
+ * 轮询策略
  * Created by xuxueli on 17/3/10.
  */
 public class ExecutorRouteRound extends ExecutorRouter {

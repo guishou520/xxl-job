@@ -30,9 +30,11 @@ public class XxlJobSpringExecutor extends XxlJobExecutor implements ApplicationC
     public void afterPropertiesSet() throws Exception {
 
         // init JobHandler Repository
+        //旧版本的使用JobHandler注解标记任务的方式，新版本已经弃用。 此处保留，只为了兼容旧版 mark by cuixy 2020年1月3日 17:10:02
         initJobHandlerRepository(applicationContext);
 
         // init JobHandler Repository (for method)
+        //新版本采用XxlJob方法级注解来创建任务 mark by cuixy 2020年1月3日 17:12:06
         initJobHandlerMethodRepository(applicationContext);
 
         // refresh GlueFactory

@@ -55,15 +55,17 @@ public class XxlJobTrigger {
         int[] shardingParam = null;
         if (executorShardingParam!=null){
             String[] shardingArr = executorShardingParam.split("/");
+            //2020年1月3日 14:45:21  shardingArr表示当前任务是被当前执行器中注册的哪个服务（IP:PORT）处理的任务。
             if (shardingArr.length==2 && isNumeric(shardingArr[0]) && isNumeric(shardingArr[1])) {
                 shardingParam = new int[2];
-                shardingParam[0] = Integer.valueOf(shardingArr[0]);
-                shardingParam[1] = Integer.valueOf(shardingArr[1]);
+                shardingParam[0] = Integer.parseInt(shardingArr[0]);
+                shardingParam[1] = Integer.parseInt(shardingArr[1]);
             }
         }
         if (ExecutorRouteStrategyEnum.SHARDING_BROADCAST==ExecutorRouteStrategyEnum.match(jobInfo.getExecutorRouteStrategy(), null)
                 && group.getRegistryList()!=null && !group.getRegistryList().isEmpty()
                 && shardingParam==null) {
+            //分片广播，在当前执行器里面进行分发广播 mark by cuixy 2020年1月3日 17:11:09
             for (int i = 0; i < group.getRegistryList().size(); i++) {
                 processTrigger(group, jobInfo, finalFailRetryCount, triggerType, i, group.getRegistryList().size());
             }

@@ -155,8 +155,7 @@ public class JobThread extends Thread{
 					if (executeResult == null) {
 						executeResult = IJobHandler.FAIL;
 					} else {
-						executeResult.setMsg(
-								(executeResult!=null&&executeResult.getMsg()!=null&&executeResult.getMsg().length()>50000)
+						executeResult.setMsg(executeResult.getMsg() != null && executeResult.getMsg().length() > 50000
 										?executeResult.getMsg().substring(0, 50000).concat("...")
 										:executeResult.getMsg());
 						executeResult.setContent(null);	// limit obj size

@@ -128,12 +128,15 @@
 			</build>
 			<distributionManagement>
 				<snapshotRepository>
-					<id>oss</id>
-					<url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+					<id>Snapshots</id>
+					<name>Snapshots</name>
+					<url>http://10.1.5.8:8081/nexus/content/repositories/snapshots/</url>
+					<uniqueVersion>true</uniqueVersion>
 				</snapshotRepository>
 				<repository>
-					<id>oss</id>
-					<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+					<id>Releases</id>
+					<name>Releases</name>
+					<url>http://10.1.5.8:8081/nexus/content/repositories/releases/</url>
 				</repository>
 			</distributionManagement>
 		</profile>

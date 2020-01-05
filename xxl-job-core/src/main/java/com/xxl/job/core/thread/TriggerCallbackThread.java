@@ -70,7 +70,7 @@ public class TriggerCallbackThread {
                             callbackParamList.add(callback);
 
                             // callback, will retry if error
-                            if (callbackParamList!=null && callbackParamList.size()>0) {
+                            if (callbackParamList.size() > 0) {
                                 doCallback(callbackParamList);
                             }
                         }

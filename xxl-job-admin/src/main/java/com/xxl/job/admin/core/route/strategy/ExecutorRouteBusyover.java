@@ -10,6 +10,7 @@ import com.xxl.job.core.biz.model.TriggerParam;
 import java.util.List;
 
 /**
+ * 忙碌转移策略
  * Created by xuxueli on 17/3/10.
  */
 public class ExecutorRouteBusyover extends ExecutorRouter {
