@@ -65,7 +65,8 @@ public class XxlJobFileAppender {
 	 * log filename, like "logPath/yyyy-MM-dd/9999.log"
 	 *
 	 * @param triggerDate
-	 * @param logId
+	 * @param logId 目前框架中使用的logId与jobId是同一个值。因此查看日志时，可以根据日志的文件名区分是哪个任务对应的日志
+	 *              mark by cuixy 2020年1月6日 10:39:52
 	 * @return
 	 */
 	public static String makeLogFileName(Date triggerDate, long logId) {
